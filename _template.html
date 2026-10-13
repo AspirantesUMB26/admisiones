@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[CARRERA_NOMBRE] | Universidad Mexiquense del Bicentenario</title>
+    <meta name="description"
+        content="[CARRERA_NOMBRE] en la Universidad Mexiquense del Bicentenario. Gobierno del Estado de México.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- HEADER INSTITUCIONAL -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="navbar-logo">
+                <span style="font-weight: 800;">UMB</span>
+                <span style="font-size: var(--text-sm); font-weight: 400; color: var(--gris-secundario);">| Gobierno del
+                    Estado de México</span>
+            </div>
+            <ul class="navbar-links">
+                <li><a href="index.html" class="navbar-link">Inicio</a></li>
+                <li><a href="#objetivo" class="navbar-link">Objetivo</a></li>
+                <li><a href="#perfil" class="navbar-link">Perfil</a></li>
+                <li><a href="#plan" class="navbar-link">Plan</a></li>
+                <li><a href="#campo" class="navbar-link">Campo Laboral</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero"
+        style="background: linear-gradient(135deg, rgba(133, 24, 42, 0.92), rgba(133, 24, 42, 0.85)), linear-gradient(to right, #85182A, #A01D33);">
+        <div class="hero-content">
+            <h1>[CARRERA_NOMBRE]</h1>
+            <p>[DESCRIPCION_BREVE]</p>
+            <a href="#objetivo" class="btn btn-primary">Conoce más</a>
+        </div>
+    </section>
+
+    <!-- CONTENIDO CON SIDEBAR -->
+    <div class="container" style="margin-top: var(--space-16); margin-bottom: var(--space-16);">
+        <div class="content-with-sidebar">
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="main-column">
+                <!-- Objetivo -->
+                <section id="objetivo" class="mb-12">
+                    <h2 style="color: var(--guinda-primary); margin-bottom: var(--space-6);">Objetivo</h2>
+                    <div class="card">
+                        <p>[OBJETIVO_DESCRIPCION]</p>
+                    </div>
+                </section>
+
+                <!-- Perfil -->
+                <section id="perfil" class="mb-12">
+                    <h2 style="color: var(--guinda-primary); margin-bottom: var(--space-6);">Perfil del Estudiante</h2>
+                    <div class="grid grid-2">
+                        <div class="card">
+                            <h4>Perfil de Ingreso</h4>
+                            <p><strong>Te puede interesar si cuentas con:</strong></p>
+                            <ul style="margin-left: var(--space-6); color: var(--gris-secundario);">
+                                [PERFIL_INGRESO_ITEMS]
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>Perfil de Egreso</h4>
+                            <p><strong>Al egresar contarás con:</strong></p>
+                            <ul style="margin-left: var(--space-6); color: var(--gris-secundario);">
+                                [PERFIL_EGRESO_ITEMS]
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Plan de Estudios -->
+                <section id="plan" class="mb-12">
+                    <h2 style="color: var(--guinda-primary); margin-bottom: var(--space-6);">Plan de Estudios</h2>
+                    <p class="text-center mb-8" style="color: var(--gris-secundario);">[DURACION] semestres de formación
+                        integral</p>
+
+                    <div class="plan-estudios">
+                        [SEMESTRES_CONTENT]
+                    </div>
+                </section>
+
+                <!-- Campo Laboral -->
+                <section id="campo" class="mb-12">
+                    <h2 style="color: var(--guinda-primary); margin-bottom: var(--space-6);">Campo Laboral</h2>
+                    <div class="grid grid-3">
+                        [CAMPO_LABORAL_CARDS]
+                    </div>
+                </section>
+
+                <!-- Planteles -->
+                <section class="mb-12">
+                    <h3 class="text-center mb-8" style="color: var(--guinda-primary);">Esta carrera se imparte en:</h3>
+                    <div class="planteles-grid">
+                        [PLANTELES_LIST]
+                    </div>
+                </section>
+            </div>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- Información Rápida -->
+                <div class="sidebar-card">
+                    <h3><span class="info-icon">ℹ️</span> Información Rápida</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📅</span>
+                        <div>
+                            <strong>Duración</strong><br>
+                            <span style="color: var(--gris-secundario);">[DURACION] semestres</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🏫</span>
+                        <div>
+                            <strong>Planteles</strong><br>
+                            <span style="color: var(--gris-secundario);">[NUM_PLANTELES] ubicaciones</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">⏰</span>
+                        <div>
+                            <strong>Turno</strong><br>
+                            <span style="color: var(--gris-secundario);">Matutino / Mixto</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🎓</span>
+                        <div>
+                            <strong>Título</strong><br>
+                            <span style="color: var(--gris-secundario);">[TITULO_OBTENIDO]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descargas -->
+                <div class="sidebar-card" style="border-left: 4px solid var(--guinda-primary);">
+                    <h3><span class="info-icon">📥</span> Descargas</h3>
+                    <p style="font-size: var(--text-sm); color: var(--gris-secundario); margin-bottom: var(--space-4);">
+                        Obtén la ficha técnica oficial en PDF.
+                    </p>
+                    <button onclick="downloadPDF()" class="btn btn-primary"
+                        style="width: 100%; justify-content: center; gap: var(--space-2);">
+                        <span class="info-icon">📄</span> Descargar PDF
+                    </button>
+                </div>
+
+                <!-- Requisitos -->
+                <div class="sidebar-card">
+                    <h3><span class="info-icon">📋</span> Requisitos</h3>
+                    <ul style="margin-left: var(--space-6); color: var(--gris-secundario); font-size: var(--text-sm);">
+                        <li>Certificado de bachillerato</li>
+                        <li>Acta de nacimiento</li>
+                        <li>CURP</li>
+                        <li>Fotografías tamaño infantil</li>
+                        <li>Examen de admisión</li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div class="sidebar-card" style="background: var(--fondo-claro); border-color: var(--dorado-primary);">
+                    <h3 style="color: var(--dorado-primary);"><span class="info-icon">📞</span> Informes</h3>
+                    <p style="font-size: var(--text-sm); color: var(--gris-secundario); margin: 0;">
+                        <strong>Tel:</strong> (01 728) 284 7310<br>
+                        <strong>Email:</strong> informes@umb.mx
+                    </p>
+                    <a href="https://umb.edomex.gob.mx" class="btn btn-secondary mt-4"
+                        style="width: 100%; justify-content: center;">
+                        Sitio Oficial UMB
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- FOOTER GUBERNAMENTAL -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Universidad Mexiquense del Bicentenario</h3>
+                    <p>Institución de educación superior del Gobierno del Estado de México.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <p>Huixquilucan, Estado de México<br>
+                        Tel: (01 728) 284 7310<br>
+                        <a href="mailto:informes@umb.mx">informes@umb.mx</a>
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h3>Enlaces Útiles</h3>
+                    <a href="index.html">Oferta Educativa</a>
+                    <a href="https://umb.edomex.gob.mx">Portal Oficial UMB</a>
+                    <a href="https://edomex.gob.mx">Gobierno Edomex</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Universidad Mexiquense del Bicentenario</p>
+                <p class="footer-logo">Gobierno del Estado de México</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
