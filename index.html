@@ -77,7 +77,7 @@
 
 		.hero {
 			background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-						url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');
+					url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');
 			background-size: cover;
 			background-position: center;
 			height: 450px;
@@ -210,7 +210,7 @@
 
 	<header>
 		<div class="brand">
-			<img src="https://raw.githubusercontent.com/ismaelumb/MAPA-UMB/refs/heads/main/Logotipo%20UMB%20-%20copia.png" alt="Logo UMB" class="logo-umb">
+			<img src="umb_logo.png" alt="Logo UMB" class="logo-umb">
 		</div>
 		<nav class="nav-menu">
 			<a href="Mapa2.html" class="nav-link">Nuestros Planteles</a>
@@ -264,7 +264,7 @@
 
 					<label class="form-consent" for="avisosCorreo">
 						<input type="checkbox" id="avisosCorreo" name="avisosCorreo" value="si">
-						<span>Acepto recibir por correo recordatorios e información sobre el proceso de admisión UMB 2027. Esta autorización es opcional y puedo solicitar dejar de recibirlos escribiendo a convocatoria@umb.mx.</span>
+						<span>Acepto recibir por correo recordatorios e información sobre el proceso de admisión UMB 2027. Esta autorización es opcional y puedo solicitar dejar de recibirlos escribiendo a convocatoria@umb.mx o solicitando la baja en cualquier momento.</span>
 					</label>
 
 					<button type="submit" class="btn-submit" id="submitBtn">Enviar Solicitud</button>
@@ -280,8 +280,8 @@
 						Para continuar con tu proceso, es importante que realices tu registro en las siguientes páginas:
 					</p>
 					<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.8rem;">
-						<a href="https://ofertaeducativaies.edugem.gob.mx/preregistro" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0;">Registrar en Preregistro</a>
-						<a href="https://sidiumb.umb.edu.mx:8088/" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0; background: #ffffff; color: #691c32; border: 1px solid #691c32;">Registrar en SIDIUMB</a>
+						<a href="https://ofertaeducativaies.edugem.gob.mx/preregistro" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block;">Ir a prerregistro (EduGEM)</a>
+						<a href="https://sidiumb.umb.edu.mx:8088/" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; background: #ffffff; color: var(--guinda); border: 1px solid var(--oro);">Ir a SID UMB</a>
 					</div>
 				</div>
 			</div>
@@ -404,12 +404,12 @@
 			btn.disabled = true;
 			btn.innerText = 'ENVIANDO...';
 
-			const carreraSeleccionada = document.getElementById('carreraSelect').value;
+			const carreraSeleccionada = document.getElementById('carreraSelect').value || '';
 			const normalizedCarrera = carreraSeleccionada.trim().toLowerCase();
 			const redirectCandidate = normalizedCarrerasMap[normalizedCarrera];
 			const careerIdMatch = redirectCandidate && redirectCandidate.match(/[?&]id=([^&]+)/);
 			const careerId = careerIdMatch ? decodeURIComponent(careerIdMatch[1]) : '';
-			const careerDetails = careerId ? DB_CARRERAS[careerId] : null;
+			const careerDetails = careerId && typeof DB_CARRERAS !== 'undefined' ? DB_CARRERAS[careerId] : null;
 			const hasCompleteCareerDetails = careerDetails &&
 				Array.isArray(careerDetails.perfilIngreso) &&
 				Array.isArray(careerDetails.perfilEgreso) &&
@@ -421,9 +421,10 @@
 
 			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 				.then(async response => {
-					const resultado = (await response.text()).trim();
-					if (!response.ok || resultado !== 'Success') {
-						throw new Error(resultado || 'No se pudo confirmar el registro.');
+					const text = (await response.text()).trim();
+					const ok = response.ok && (/success/i).test(text);
+					if (!ok) {
+						throw new Error(text || 'No se pudo confirmar el registro.');
 					}
 
 					btn.disabled = false;
@@ -435,7 +436,7 @@
 					form.reset();
 					carreraSelect.disabled = true;
 					carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
-                    
+            
 					setTimeout(() => {
 						if (redirectUrl) {
 							window.location.href = redirectUrl;
@@ -446,7 +447,7 @@
 					btn.disabled = false;
 					btn.innerText = 'REINTENTAR ENVÍO';
 					alert('Hubo un problema al enviar tus datos. Por favor, revisa tu conexión e inténtalo de nuevo.');
-					console.error('Error!', error.message);
+					console.error('Error!', error.message || error);
 				});
 		});
 	</script>
