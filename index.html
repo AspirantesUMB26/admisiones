@@ -1,435 +1,454 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Inicia tu proceso de pre-registro en la Universidad Mexiquense del Bicentenario (UMB). Consulta nuestra oferta educativa en planteles del Estado de México.">
-  <title>Admisiones UMB - Universidad Mexiquense del Bicentenario</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Inicia tu proceso de pre-registro en la Universidad Mexiquense del Bicentenario (UMB). Consulta nuestra oferta educativa en planteles del Estado de México.">
+	<title>Admisiones UMB - Universidad Mexiquense del Bicentenario</title>
+    
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+	<style>
+		:root {
+			--guinda: #691c32; 
+			--oro: #bc955c;   
+			--oro-dark: #a6834d;
+			--texto: #333;
+			--gris-linea: #ddd;
+			--gris-fondo: #f8f9fa;
+			--blanco: #ffffff;
+			--exito: #2e7d32;
+		}
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+		* { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
-  <style>
-    :root {
-      --guinda: #691c32;
-      --oro: #bc955c;
-      --oro-dark: #a6834d;
-      --texto: #333;
-      --gris-linea: #ddd;
-      --gris-fondo: #f8f9fa;
-      --blanco: #ffffff;
-      --exito: #2e7d32;
-    }
+		body {
+			font-family: 'Montserrat', sans-serif;
+			line-height: 1.6;
+			color: var(--texto);
+			background-color: var(--gris-fondo);
+			overflow-x: hidden;
+		}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+		header {
+			background: #fff;
+			padding: 0.6rem 5%;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+			position: sticky;
+			top: 0;
+			z-index: 1000;
+		}
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
-      color: var(--texto);
-      background-color: var(--gris-fondo);
-      overflow-x: hidden;
-    }
+		.brand { display: flex; align-items: center; gap: 15px; }
+		.logo-umb { height: 50px; width: auto; }
 
-    header {
-      background: #fff;
-      padding: 0.6rem 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+		.nav-menu { display: flex; gap: 20px; align-items: center; }
+		.nav-link { text-decoration: none; color: var(--texto); font-weight: 600; font-size: 0.85rem; transition: color 0.3s; }
+		.nav-link:hover { color: var(--guinda); }
 
-    .brand { display: flex; align-items: center; gap: 15px; }
-    .logo-umb { height: 50px; width: auto; }
+		.btn-pre {
+			background: var(--guinda);
+			color: white;
+			padding: 0.6rem 1.4rem;
+			border-radius: 4px;
+			text-decoration: none;
+			font-weight: 700;
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			transition: opacity 0.3s;
+		}
+		.btn-pre:hover { opacity: 0.9; }
 
-    .nav-menu { display: flex; gap: 20px; align-items: center; }
-    .nav-link { text-decoration: none; color: var(--texto); font-weight: 600; font-size: 0.85rem; transition: color 0.3s; }
-    .nav-link:hover { color: var(--guinda); }
+		.quick-info {
+			background: var(--guinda);
+			color: white;
+			display: flex;
+			justify-content: center;
+			gap: 50px;
+			padding: 15px;
+			text-align: center;
+		}
 
-    .btn-pre {
-      background: var(--guinda);
-      color: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      transition: opacity 0.3s;
-    }
-    .btn-pre:hover { opacity: 0.9; }
+		.info-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; }
+		.info-item span { color: var(--oro); font-size: 1.2rem; }
 
-    .quick-info {
-      background: var(--guinda);
-      color: white;
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      padding: 15px;
-      text-align: center;
-    }
+		.hero {
+			background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+						url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');
+			background-size: cover;
+			background-position: center;
+			height: 450px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			color: white;
+			text-align: center;
+			padding: 0 20px;
+		}
 
-    .info-item { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; }
-    .info-item span { color: var(--oro); font-size: 1.2rem; }
+		.hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      height: 450px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 0 20px;
-    }
+		.overlap-container {
+			position: relative;
+			z-index: 10;
+			margin-top: -100px; 
+			display: flex;
+			justify-content: center;
+			padding: 0 20px;
+			margin-bottom: 60px;
+		}
 
-    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+		.form-card {
+			background: white;
+			padding: 2.5rem;
+			border-radius: 12px;
+			box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+			width: 100%;
+			max-width: 550px;
+		}
 
-    .overlap-container {
-      position: relative;
-      z-index: 10;
-      margin-top: -100px;
-      display: flex;
-      justify-content: center;
-      padding: 0 20px;
-      margin-bottom: 60px;
-    }
+		.form-card h2 {
+			color: var(--guinda);
+			font-size: 1.5rem;
+			margin-bottom: 1.5rem;
+			border-left: 5px solid var(--oro);
+			padding-left: 15px;
+		}
 
-    .form-card {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      width: 100%;
-      max-width: 550px;
-    }
+		.form-group { margin-bottom: 1.2rem; }
+        
+		label {
+			display: block;
+			font-size: 0.8rem;
+			font-weight: 600;
+			color: #666;
+			margin-bottom: 5px;
+		}
 
-    .form-card h2 {
-      color: var(--guinda);
-      font-size: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid var(--oro);
-      padding-left: 15px;
-    }
+		input, select {
+			width: 100%;
+			padding: 0.9rem;
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			font-family: inherit;
+			background: #fff;
+			font-size: 0.95rem;
+		}
 
-    .form-group { margin-bottom: 1.2rem; }
+		input:focus, select:focus {
+			outline: none;
+			border-color: var(--oro);
+			box-shadow: 0 0 0 2px rgba(188, 149, 92, 0.2);
+		}
 
-    label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #666;
-      margin-bottom: 5px;
-    }
+		.btn-submit {
+			background: var(--oro);
+			color: white;
+			border: none;
+			width: 100%;
+			padding: 1.1rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			cursor: pointer;
+			border-radius: 6px;
+			transition: 0.3s;
+			margin-top: 1rem;
+		}
 
-    input, select {
-      width: 100%;
-      padding: 0.9rem;
-      border: 1px solid #e0e0e0;
-      border-radius: 6px;
-      font-family: inherit;
-      background: #fff;
-      font-size: 0.95rem;
-    }
+		.btn-submit:hover { background: var(--oro-dark); }
+		.btn-submit:disabled { background: #ccc; cursor: not-allowed; }
 
-    input:focus, select:focus {
-      outline: none;
-      border-color: var(--oro);
-      box-shadow: 0 0 0 2px rgba(188, 149, 92, 0.2);
-    }
+		#mensajeExito {
+			display: none;
+			color: var(--exito);
+			margin-top: 15px;
+			font-weight: 600;
+			text-align: center;
+			background: #e8f5e9;
+			padding: 10px;
+			border-radius: 4px;
+		}
 
-    .btn-submit {
-      background: var(--oro);
-      color: white;
-      border: none;
-      width: 100%;
-      padding: 1.1rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: 0.3s;
-      margin-top: 1rem;
-    }
+		.form-consent {
+			display: flex;
+			align-items: flex-start;
+			gap: 10px;
+			margin: 1rem 0;
+			font-size: 0.78rem;
+			line-height: 1.5;
+			color: #555;
+		}
 
-    .btn-submit:hover { background: var(--oro-dark); }
-    .btn-submit:disabled { background: #ccc; cursor: not-allowed; }
+		.form-consent input {
+			width: auto;
+			margin-top: 3px;
+			accent-color: var(--guinda);
+		}
 
-    #mensajeExito {
-      display: none;
-      color: var(--exito);
-      margin-top: 15px;
-      font-weight: 600;
-      text-align: center;
-      background: #e8f5e9;
-      padding: 10px;
-      border-radius: 4px;
-    }
+		footer {
+			background: var(--guinda);
+			color: white;
+			text-align: center;
+			padding: 3rem 20px;
+		}
 
-    .form-consent {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin: 1rem 0;
-      font-size: 0.78rem;
-      line-height: 1.5;
-      color: #555;
-    }
+		footer a { color: var(--oro); text-decoration: none; }
 
-    .form-consent input {
-      width: auto;
-      margin-top: 3px;
-      accent-color: var(--guinda);
-    }
-
-    footer {
-      background: var(--guinda);
-      color: white;
-      text-align: center;
-      padding: 3rem 20px;
-    }
-
-    footer a { color: var(--oro); text-decoration: none; }
-
-    @media (max-width: 768px) {
-      .nav-menu { display: none; }
-      .quick-info { flex-direction: column; gap: 10px; }
-      .hero h1 { font-size: 1.8rem; }
-      .form-card { padding: 1.5rem; }
-    }
-  </style>
+		@media (max-width: 768px) {
+			.nav-menu { display: none; }
+			.quick-info { flex-direction: column; gap: 10px; }
+			.hero h1 { font-size: 1.8rem; }
+			.form-card { padding: 1.5rem; }
+		}
+	</style>
 </head>
 <body>
 
-  <header>
-    <div class="brand">
-      <img src="https://raw.githubusercontent.com/ismaelumb/MAPA-UMB/refs/heads/main/Logotipo%20UMB%20-%20copia.png" alt="Logo UMB" class="logo-umb">
-    </div>
-    <nav class="nav-menu">
-      <a href="Mapa2.html" class="nav-link">Nuestros Planteles</a>
-      <a href="#registro" class="btn-pre">Pre-registro</a>
-    </nav>
-  </header>
+	<header>
+		<div class="brand">
+			<img src="https://raw.githubusercontent.com/ismaelumb/MAPA-UMB/refs/heads/main/Logotipo%20UMB%20-%20copia.png" alt="Logo UMB" class="logo-umb">
+		</div>
+		<nav class="nav-menu">
+			<a href="Mapa2.html" class="nav-link">Nuestros Planteles</a>
+			<a href="#registro" class="btn-pre">Pre-registro</a>
+		</nav>
+	</header>
 
-  <div class="quick-info">
-    <div class="info-item"><span>📍</span> 36 Unidades de Estudios</div>
-    <div class="info-item"><span>🎓</span> Oferta Educativa Regional</div>
-  </div>
+	<div class="quick-info">
+		<div class="info-item"><span>📍</span> 36 Unidades de Estudios</div>
+		<div class="info-item"><span>🎓</span> Oferta Educativa Regional</div>
+	</div>
 
-  <main>
-    <section class="hero">
-      <h1>Inicia tu Proceso de Admisión</h1>
-      <p>Selecciona tu plantel más cercano y descubre tu carrera ideal.</p>
-    </section>
+	<main>
+		<section class="hero">
+			<h1>Inicia tu Proceso de Admisión</h1>
+			<p>Selecciona tu plantel más cercano y descubre tu carrera ideal.</p>
+		</section>
 
-    <div class="overlap-container">
-      <div class="form-card" id="registro">
-        <h2>Solicita Información</h2>
-        <form id="umbForm" method="POST">
-          <div class="form-group">
-            <label for="nombre">Nombre Completo</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez López" required>
-          </div>
+		<div class="overlap-container">
+			<div class="form-card" id="registro">
+				<h2>Solicita Información</h2>
+				<form id="umbForm">
+					<div class="form-group">
+						<label for="nombre">Nombre Completo</label>
+						<input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez López" required>
+					</div>
 
-          <div class="form-group">
-            <label for="email">Correo Electrónico</label>
-            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
-          </div>
+					<div class="form-group">
+						<label for="email">Correo Electrónico</label>
+						<input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+					</div>
 
-          <div class="form-group">
-            <label for="telefono">Número de Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required pattern="[0-9]{10}" title="Ingresa un número válido de 10 dígitos">
-          </div>
+					<div class="form-group">
+						<label for="telefono">Número de Teléfono</label>
+						<input type="tel" id="telefono" name="telefono" placeholder="10 dígitos" required pattern="[0-9]{10}" title="Ingresa un número válido de 10 dígitos">
+					</div>
+                    
+					<div class="form-group">
+						<label for="uesSelect">1. Selecciona tu Plantel (UES):</label>
+						<select id="uesSelect" name="plantel" required>
+							<option value="">-- Elige una UES --</option>
+						</select>
+					</div>
 
-          <div class="form-group">
-            <label for="uesSelect">1. Selecciona tu Plantel (UES):</label>
-            <select id="uesSelect" name="plantel" required>
-              <option value="">-- Elige una UES --</option>
-            </select>
-          </div>
+					<div class="form-group">
+						<label for="carreraSelect">2. Selecciona tu Carrera:</label>
+						<select id="carreraSelect" name="area" required disabled>
+							<option value="">-- Primero selecciona un plantel --</option>
+						</select>
+					</div>
 
-          <div class="form-group">
-            <label for="carreraSelect">2. Selecciona tu Carrera:</label>
-            <select id="carreraSelect" name="area" required disabled>
-              <option value="">-- Primero selecciona un plantel --</option>
-            </select>
-          </div>
+					<label class="form-consent" for="avisosCorreo">
+						<input type="checkbox" id="avisosCorreo" name="avisosCorreo" value="si">
+						<span>Acepto recibir por correo recordatorios e información sobre el proceso de admisión UMB 2027. Esta autorización es opcional y puedo solicitar dejar de recibirlos escribiendo a convocatoria@umb.mx.</span>
+					</label>
 
-          <label class="form-consent" for="avisosCorreo">
-            <input type="checkbox" id="avisosCorreo" name="avisosCorreo" value="si">
-            <span>Acepto recibir por correo recordatorios e información sobre el proceso de admisión UMB 2027. Esta autorización es opcional y puedo solicitar dejar de recibirlos escribiendo a convocatoria@umb.mx.</span>
-          </label>
+					<button type="submit" class="btn-submit" id="submitBtn">Enviar Solicitud</button>
+				</form>
+				<div id="mensajeExito">✓ ¡Información registrada con éxito! En breve te contactaremos.</div>
 
-          <button type="submit" class="btn-submit" id="submitBtn">Enviar Solicitud</button>
-        </form>
+				<div style="margin-top: 1.5rem; padding: 1rem; background: #fdf8f9; border: 1px solid #f2e1e5; border-radius: 8px;">
+					<h3 style="color: var(--guinda); font-size: 1rem; margin-bottom: 0.6rem;">Contenido para el correo</h3>
+					<p style="margin-bottom: 0.6rem; line-height: 1.7; color: #444;">
+						Te informamos que próximamente recibirás información relacionada con la carrera que seleccionaste.
+					</p>
+					<p style="margin-bottom: 0.6rem; line-height: 1.7; color: #444;">
+						Para continuar con tu proceso, es importante que realices tu registro en las siguientes páginas:
+					</p>
+					<div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.8rem;">
+						<a href="https://ofertaeducativaies.edugem.gob.mx/preregistro" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0;">Registrar en Preregistro</a>
+						<a href="https://sidiumb.umb.edu.mx:8088/" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0; background: #ffffff; color: #691c32; border: 1px solid #691c32;">Registrar en SIDIUMB</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
 
-        <div id="mensajeExito">✓ ¡Información registrada con éxito! En breve te contactaremos.</div>
+	<footer>
+		<p><strong>Universidad Mexiquense del Bicentenario</strong></p>
+		<p>Atención: 55 98 13 66 92 | <a href="mailto:convocatoria@umb.mx">convocatoria@umb.mx</a></p>
+	</footer>
 
-        <div style="margin-top: 1.5rem; padding: 1rem; background: #fdf8f9; border: 1px solid #f2e1e5; border-radius: 8px;">
-          <h3 style="color: var(--guinda); font-size: 1rem; margin-bottom: 0.6rem;">Contenido para el correo</h3>
-          <p style="margin-bottom: 0.6rem; line-height: 1.7; color: #444;">
-            Te informamos que próximamente recibirás información relacionada con la carrera que seleccionaste.
-          </p>
-          <p style="margin-bottom: 0.6rem; line-height: 1.7; color: #444;">
-            Para continuar con tu proceso, es importante que realices tu registro en las siguientes páginas:
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 0.8rem;">
-            <a href="https://ofertaeducativaies.edugem.gob.mx/preregistro" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0;">Abrir preregistro</a>
-            <a href="https://sidiumb.umb.edu.mx:8088/" target="_blank" rel="noopener" class="btn-submit" style="text-align: center; text-decoration: none; display: block; margin-top: 0; background: #8c6b3a;">Abrir SIDIUMB</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+	<script src="carreras.js"></script>
+	<script>
+		const ofertaEducativa = {
+			"UES Amatepec": ["Ingeniería en Innovación Agrícola Sustentable"],
+			"UES Acambay": ["Licenciatura en Nutrición", "Ingeniería Mecánica"],
+			"UES Almoloya de Alquisiras": ["Ingeniería en Sistemas Computacionales", "Licenciatura en Administración"],
+			"UES Atenco": ["Licenciatura en Derecho", "Ingeniería Industrial", "Ingeniería en Tecnologías de la Información y Comunicación"],
+			"UES Chalco": ["Licenciatura en Administración", "Licenciatura en Contaduría"],
+			"UES Coatepec Harinas": ["Licenciatura en Contaduría", "Licenciatura en Enfermería", "Ingeniería en Innovación Agrícola Sustentable"],
+			"UES Ecatepec": ["Ingeniería en Logística y Distribución", "Ingeniería en Gestión Empresarial", "Licenciatura en Derecho", "Licenciatura en Informática Administrativa y Financiera"],
+			"UES El Oro": ["Ingeniería Civil", "Licenciatura en Nutrición", "Licenciatura en Enfermería", "Licenciatura en Gastronomía y Turismo Sustentable"],
+			"UES Hueypoxtla": ["Licenciatura en Contaduría", "Licenciatura en Derecho"],
+			"UES Huixquilucan": ["Licenciatura en Arquitectura", "Licenciatura en Contaduría", "Licenciatura en Informática"],
+			"UES Ixtapaluca": ["Ingeniería en Innovación Alimenticia", "Licenciatura en Derecho", "Licenciatura en Nutrición", "Licenciatura en Informática Administrativa y Financiera", "Ingeniería en Innovación Agrícola Sustentable"],
+			"UES Ixtlahuaca": ["Ingeniería Mecánica", "Licenciatura en Administración", "Licenciatura en Informática", "Licenciatura en Nutrición"],
+			"UES Jilotepec": ["Ingeniería Mecánica", "Licenciatura en Arquitectura", "Licenciatura en Contaduría", "Licenciatura en Enfermería", "Licenciatura en Psicología Industrial"],
+			"UES Jiquipilco": ["Licenciatura en Arquitectura", "Ingeniería en Gestión Empresarial", "Ingeniería en Sistemas Computacionales"],
+			"UES La Paz": ["Licenciatura en Administración", "Licenciatura en Derecho", "Licenciatura en Psicología Industrial"],
+			"UES Lerma": ["Ingeniería en Plásticos", "Ingeniería Industrial", "Licenciatura en Contaduría", "Licenciatura en Nutrición", "Maestría en Ciencias para la Paz"],
+			"UES Luvianos": ["Ingeniería Industrial"],
+			"UES Morelos": ["Ingeniería Electromecánica", "Ingeniería en Innovación Agrícola Sustentable"],
+			"UES San José del Rincón": ["Ingeniería en Innovación Agrícola Sustentable", "Ingeniería en Sistemas Computacionales", "Licenciatura en Contaduría"],
+			"UES Sultepec": ["Licenciatura en Contaduría", "Licenciatura en Enfermería"],
+			"UES Tecámac": ["Licenciatura en Contaduría", "Licenciatura en Informática"],
+			"UES Tejupilco": ["Licenciatura en Arquitectura", "Licenciatura en Nutrición"],
+			"UES Temascalcingo": ["Licenciatura en Administración", "Licenciatura en Informática Administrativa y Financiera", "Licenciatura en Psicología Industrial", "Ingeniería en Logística y Distribución"],
+			"UES Temoaya": ["Licenciatura en Contaduría", "Licenciatura en Enfermería", "Licenciatura en Informática"],
+			"UES Tenango del Valle": ["Licenciatura en Administración", "Licenciatura en Nutrición", "Ingeniería en Sistemas Computacionales"],
+			"UES Tepotzotlán": ["Ingeniería en Tecnologías de la Información y Comunicación", "Ingeniería en Logística y Distribución", "Licenciatura en Administración"],
+			"UES Teoloyucan": ["Ingeniería en Gestión Empresarial", "Licenciatura en Psicología Industrial"],
+			"UES Tlatlaya": ["Ingeniería Civil", "Licenciatura en Contaduría", "Licenciatura en Enfermería"],
+			"UES Tultepec": ["Licenciatura en Informática Administrativa y Financiera", "Licenciatura en Enfermería", "Licenciatura en Nutrición", "Ingeniería en Logística y Distribución"],
+			"UES Tultitlán": ["Ingeniería Civil", "Ingeniería Química", "Licenciatura en Contaduría", "Licenciatura en Psicología Industrial"],
+			"UES Villa del Carbón": ["Licenciatura en Enfermería", "Licenciatura en Nutrición", "Licenciatura en Gastronomía y Turismo Sustentable"],
+			"UES Villa Victoria": ["Licenciatura en Contaduría", "Licenciatura en Derecho", "Licenciatura en Enfermería", "Licenciatura en Informática", "Licenciatura en Psicología Industrial"],
+			"UES Xalatlaco": ["Ingeniería en Gestión Empresarial", "Ingeniería en Mecánica Automotriz", "Licenciatura en Psicología Industrial"],
+			"UES para Adultos y Adultos Mayores Ecatepec": ["Licenciatura en Derecho", "Licenciatura en Administración", "Licenciatura en Psicología Industrial"]
+		};
 
-  <footer>
-    <p><strong>Universidad Mexiquense del Bicentenario</strong></p>
-    <p>Atención: 55 98 13 66 92 | <a href="mailto:convocatoria@umb.mx">convocatoria@umb.mx</a></p>
-  </footer>
+		const uesSelect = document.getElementById('uesSelect');
+		const carreraSelect = document.getElementById('carreraSelect');
 
-  <script>
-    const ofertaEducativa = {
-      "UES Amatepec": ["Ingeniería en Innovación Agrícola Sustentable"],
-      "UES Acambay": ["Licenciatura en Nutrición", "Ingeniería Mecánica"],
-      "UES Almoloya de Alquisiras": ["Ingeniería en Sistemas Computacionales", "Licenciatura en Administración"],
-      "UES Atenco": ["Licenciatura en Derecho", "Ingeniería Industrial", "Ingeniería en Tecnologías de la Información y Comunicación"],
-      "UES Chalco": ["Licenciatura en Administración", "Licenciatura en Contaduría"],
-      "UES Coatepec Harinas": ["Licenciatura en Contaduría", "Licenciatura en Enfermería", "Ingeniería en Innovación Agrícola Sustentable"],
-      "UES Ecatepec": ["Ingeniería en Logística y Distribución", "Ingeniería en Gestión Empresarial", "Licenciatura en Derecho", "Licenciatura en Informática Administrativa y Financiera"],
-      "UES El Oro": ["Ingeniería Civil", "Licenciatura en Nutrición", "Licenciatura en Enfermería", "Licenciatura en Gastronomía y Turismo Sustentable"],
-      "UES Hueypoxtla": ["Licenciatura en Contaduría", "Licenciatura en Derecho"],
-      "UES Huixquilucan": ["Licenciatura en Arquitectura", "Licenciatura en Contaduría", "Licenciatura en Informática"],
-      "UES Ixtapaluca": ["Ingeniería en Innovación Alimenticia", "Licenciatura en Derecho", "Licenciatura en Nutrición", "Licenciatura en Informática Administrativa y Financiera", "Ingeniería en Innovación Alimenticia"],
-      "UES Ixtlahuaca": ["Ingeniería Mecánica", "Licenciatura en Administración", "Licenciatura en Informática", "Licenciatura en Nutrición"],
-      "UES Jilotepec": ["Ingeniería Mecánica", "Licenciatura en Arquitectura", "Licenciatura en Contaduría", "Licenciatura en Enfermería", "Licenciatura en Psicología Industrial"],
-      "UES Jiquipilco": ["Licenciatura en Arquitectura", "Ingeniería en Gestión Empresarial", "Ingeniería en Sistemas Computacionales"],
-      "UES La Paz": ["Licenciatura en Administración", "Licenciatura en Derecho", "Licenciatura en Psicología Industrial"],
-      "UES Lerma": ["Ingeniería en Plásticos", "Ingeniería Industrial", "Licenciatura en Contaduría", "Licenciatura en Nutrición", "Maestría en Ciencias para la Paz"],
-      "UES Luvianos": ["Ingeniería Industrial"],
-      "UES Morelos": ["Ingeniería Electromecánica", "Ingeniería en Innovación Agrícola Sustentable"],
-      "UES San José del Rincón": ["Ingeniería en Innovación Agrícola Sustentable", "Ingeniería en Sistemas Computacionales", "Licenciatura en Contaduría"],
-      "UES Sultepec": ["Licenciatura en Contaduría", "Licenciatura en Enfermería"],
-      "UES Tecámac": ["Licenciatura en Contaduría", "Licenciatura en Informática"],
-      "UES Tejupilco": ["Licenciatura en Arquitectura", "Licenciatura en Nutrición"],
-      "UES Temascalcingo": ["Licenciatura en Administración", "Licenciatura en Informática Administrativa y Financiera", "Licenciatura en Psicología Industrial", "Ingeniería en Logística y Distribución"],
-      "UES Temoaya": ["Licenciatura en Contaduría", "Licenciatura en Enfermería", "Licenciatura en Informática"],
-      "UES Tenango del Valle": ["Licenciatura en Administración", "Licenciatura en Nutrición", "Ingeniería en Sistemas Computacionales"],
-      "UES Tepotzotlán": ["Ingeniería en Tecnologías de la Información y Comunicación", "Ingeniería en Logística y Distribución", "Licenciatura en Administración"],
-      "UES Teoloyucan": ["Ingeniería en Gestión Empresarial", "Licenciatura en Psicología Industrial"],
-      "UES Tlatlaya": ["Ingeniería Civil", "Licenciatura en Contaduría", "Licenciatura en Enfermería"],
-      "UES Tultepec": ["Licenciatura en Informática Administrativa y Financiera", "Licenciatura en Enfermería", "Licenciatura en Nutrición", "Ingeniería en Logística y Distribución"],
-      "UES Tultitlán": ["Ingeniería Civil", "Ingeniería Química", "Licenciatura en Contaduría", "Licenciatura en Psicología Industrial"],
-      "UES Villa del Carbón": ["Licenciatura en Enfermería", "Licenciatura en Nutrición", "Licenciatura en Gastronomía y Turismo Sustentable"],
-      "UES Villa Victoria": ["Licenciatura en Contaduría", "Licenciatura en Derecho", "Licenciatura en Enfermería", "Licenciatura en Informática", "Licenciatura en Psicología Industrial"],
-      "UES Xalatlaco": ["Ingeniería en Gestión Empresarial", "Ingeniería en Mecánica Automotriz", "Licenciatura en Psicología Industrial"],
-      "UES para Adultos y Adultos Mayores Ecatepec": ["Licenciatura en Derecho", "Licenciatura en Administración", "Licenciatura en Psicología Industrial"]
-    };
+		Object.keys(ofertaEducativa).sort().forEach(ues => {
+			let option = document.createElement('option');
+			option.value = ues;
+			option.textContent = ues;
+			uesSelect.appendChild(option);
+		});
 
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKrcsYYrOWMRjbZKcYRnqSGRO3vsUeo__RpDnhf2zM0hsfGxeQVXgypVThtMkS-BU-/exec';
-    const uesSelect = document.getElementById('uesSelect');
-    const carreraSelect = document.getElementById('carreraSelect');
-    const form = document.getElementById('umbForm');
-    const btn = document.getElementById('submitBtn');
-    const msg = document.getElementById('mensajeExito');
+		uesSelect.addEventListener('change', function() {
+			const uesSeleccionada = this.value;
+			carreraSelect.innerHTML = '<option value="">-- Selecciona una carrera --</option>';
+            
+			if(uesSeleccionada) {
+				carreraSelect.disabled = false;
+				ofertaEducativa[uesSeleccionada].forEach(carrera => {
+					let option = document.createElement('option');
+					option.value = carrera;
+					option.textContent = carrera;
+					carreraSelect.appendChild(option);
+				});
+			} else {
+				carreraSelect.disabled = true;
+				carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
+			}
+		});
 
-    Object.keys(ofertaEducativa).sort().forEach(ues => {
-      const option = document.createElement('option');
-      option.value = ues;
-      option.textContent = ues;
-      uesSelect.appendChild(option);
-    });
+		// Mapeo dinámico redirigiendo a la plantilla única 'carrera.html'
+		const carrerasMap = {
+			"Ingeniería Civil": "carrera.html?id=ingenieria-civil",
+			"Ingeniería Electromecánica": "carrera.html?id=ingenieria-electromecanica",
+			"Ingeniería en Gestión Empresarial": "carrera.html?id=ingenieria-en-gestion-empresarial",
+			"Ingeniería en Innovación Agrícola Sustentable": "carrera.html?id=ingenieria-en-innovacion-agricola-sustentable",
+			"Ingeniería en Innovación Alimenticia": "carrera.html?id=ingenieria-en-innovacion-alimenticia",
+			"Ingeniería en Logística y Distribución": "carrera.html?id=ingenieria-en-logistica-y-distribucion",
+			"Ingeniería en Mecánica Automotriz": "carrera.html?id=ingenieria-en-mecanica-automotriz",
+			"Ingeniería en Plásticos": "carrera.html?id=ingenieria-en-plasticos",
+			"Ingeniería en Sistemas Computacionales": "carrera.html?id=ingenieria-en-sistemas-computacionales",
+			"Ingeniería en Tecnologías de la Información y Comunicación": "carrera.html?id=ingenieria-en-tecnologias-de-la-informacion-y-comunicacion",
+			"Ingeniería en Tecnologías de la Información y Comunicaciones": "carrera.html?id=ingenieria-en-tecnologias-de-la-informacion-y-comunicacion",
+			"Ingeniería Industrial": "carrera.html?id=ingenieria-industrial",
+			"Ingeniería Mecánica": "carrera.html?id=ingenieria-mecanica",
+			"Ingeniería Química": "carrera.html?id=ingenieria-quimica",
+			"Licenciatura en Administración": "carrera.html?id=licenciatura-en-administracion",
+			"Licenciatura en Arquitectura": "carrera.html?id=licenciatura-en-arquitectura",
+			"Licenciatura en Contaduría": "carrera.html?id=licenciatura-en-contaduria",
+			"Licenciatura en Derecho": "carrera.html?id=licenciatura-en-derecho",
+			"Licenciatura en Enfermería": "carrera.html?id=licenciatura-en-enfermeria",
+			"Licenciatura en Gastronomía y Turismo Sustentable": "carrera.html?id=licenciatura-en-gastronomia-y-turismo-sustentable",
+			"Licenciatura en Informática Administrativa y Financiera": "carrera.html?id=licenciatura-en-informatica-administrativa-y-financiera",
+			"Licenciatura en Informática": "carrera.html?id=licenciatura-en-informatica",
+			"Licenciatura en Nutrición": "carrera.html?id=licenciatura-en-nutricion",
+			"Licenciatura en Psicología Industrial": "carrera.html?id=licenciatura-en-psicologia-industrial",
+			"Maestría en Ciencias para la Paz": "index.html"
+		};
 
-    uesSelect.addEventListener('change', function() {
-      const uesSeleccionada = this.value;
-      carreraSelect.innerHTML = '<option value="">-- Selecciona una carrera --</option>';
+		const normalizedCarrerasMap = Object.keys(carrerasMap).reduce((acc, key) => {
+			acc[key.trim().toLowerCase()] = carrerasMap[key];
+			return acc;
+		}, {});
 
-      if (uesSeleccionada) {
-        carreraSelect.disabled = false;
-        ofertaEducativa[uesSeleccionada].forEach(carrera => {
-          const option = document.createElement('option');
-          option.value = carrera;
-          option.textContent = carrera;
-          carreraSelect.appendChild(option);
-        });
-      } else {
-        carreraSelect.disabled = true;
-        carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
-      }
-    });
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbwdbzO23k3R6FzAWOQ_4jbUneQT81TJjma-voz6nxcjXTVL4AaniOdWknnPJ1t0FyWb/exec';
+		const form = document.getElementById('umbForm');
+		const btn = document.getElementById('submitBtn');
+		const msg = document.getElementById('mensajeExito');
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+		form.addEventListener('submit', e => {
+			e.preventDefault();
+			btn.disabled = true;
+			btn.innerText = 'ENVIANDO...';
 
-      btn.disabled = true;
-      btn.innerText = 'ENVIANDO...';
+			const carreraSeleccionada = document.getElementById('carreraSelect').value;
+			const normalizedCarrera = carreraSeleccionada.trim().toLowerCase();
+			const redirectCandidate = normalizedCarrerasMap[normalizedCarrera];
+			const careerIdMatch = redirectCandidate && redirectCandidate.match(/[?&]id=([^&]+)/);
+			const careerId = careerIdMatch ? decodeURIComponent(careerIdMatch[1]) : '';
+			const careerDetails = careerId ? DB_CARRERAS[careerId] : null;
+			const hasCompleteCareerDetails = careerDetails &&
+				Array.isArray(careerDetails.perfilIngreso) &&
+				Array.isArray(careerDetails.perfilEgreso) &&
+				Array.isArray(careerDetails.planEstudios) &&
+				Array.isArray(careerDetails.planteles);
+			const redirectUrl = redirectCandidate === 'index.html' || hasCompleteCareerDetails
+				? redirectCandidate
+				: null;
 
-      const carreraSeleccionada = document.getElementById('carreraSelect').value;
-      const redirectUrl = carreraSeleccionada ? `carrera.html?nombre=${encodeURIComponent(carreraSeleccionada)}` : null;
+			fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+				.then(async response => {
+					const resultado = (await response.text()).trim();
+					if (!response.ok || resultado !== 'Success') {
+						throw new Error(resultado || 'No se pudo confirmar el registro.');
+					}
 
-      try {
-        const response = await fetch(scriptURL, {
-          method: 'POST',
-          body: new FormData(form)
-        });
-
-        const resultado = (await response.text()).trim();
-
-        if (!response.ok || resultado !== 'Success') {
-          throw new Error(resultado || 'No se pudo confirmar el registro.');
-        }
-
-        btn.disabled = false;
-        btn.innerText = 'ENVIAR SOLICITUD';
-        msg.style.display = 'block';
-        msg.textContent = '✓ ¡Información registrada con éxito! Te llevaremos a la página de tu carrera en breve.';
-        form.reset();
-        carreraSelect.disabled = true;
-        carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
-
-        setTimeout(() => {
-          if (redirectUrl) {
-            window.location.href = redirectUrl;
-          }
-        }, 2000);
-
-      } catch (error) {
-        console.warn('fetch falló; usando fallback en nueva pestaña.', error);
-
-        try {
-          form.action = scriptURL;
-          form.target = '_blank';
-          form.method = 'POST';
-          form.submit();
-
-          btn.disabled = false;
-          btn.innerText = 'ENVIAR SOLICITUD';
-          msg.style.display = 'block';
-          msg.textContent = '✓ Tus datos se enviaron en una pestaña nueva. En breve te contactaremos.';
-          form.reset();
-          carreraSelect.disabled = true;
-          carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
-
-          setTimeout(() => {
-            if (redirectUrl) {
-              window.location.href = redirectUrl;
-            }
-          }, 2000);
-
-        } catch (fallbackError) {
-          btn.disabled = false;
-          btn.innerText = 'REINTENTAR ENVÍO';
-          alert('Hubo un problema al enviar tus datos. Por favor, revisa tu conexión e inténtalo de nuevo.');
-          console.error('Error!', fallbackError.message || fallbackError);
-        }
-      }
-    });
-  </script>
+					btn.disabled = false;
+					btn.innerText = 'ENVIAR SOLICITUD';
+					msg.style.display = 'block';
+					msg.textContent = redirectUrl
+						? '✓ ¡Información registrada con éxito! Te llevaremos a la página de tu carrera en breve.'
+						: '✓ ¡Información registrada con éxito!';
+					form.reset();
+					carreraSelect.disabled = true;
+					carreraSelect.innerHTML = '<option value="">-- Primero selecciona un plantel --</option>';
+                    
+					setTimeout(() => {
+						if (redirectUrl) {
+							window.location.href = redirectUrl;
+						}
+					}, 2000);
+				})
+				.catch(error => {
+					btn.disabled = false;
+					btn.innerText = 'REINTENTAR ENVÍO';
+					alert('Hubo un problema al enviar tus datos. Por favor, revisa tu conexión e inténtalo de nuevo.');
+					console.error('Error!', error.message);
+				});
+		});
+	</script>
 </body>
 </html>
